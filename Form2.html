@@ -3,45 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forms1</title>
-<style>
-    body{
-       border:3px solid black;
-        border-top: 7px solid black;
-        width: 70%;
-        padding:30px;
-        color:  solid black;
-        margin: 50px auto;
-        text-align: center;
-         box-shadow: 20px 20px 100px gray;
-        
-    }
+    <title>Document</title>
+    <style>
 
-</style>
+    </style>
 </head>
 <body >
-    <h1>Hotel Room Booking Form</h1>
-    <form>
-        <label for="name">FULL NAME:</label>
-        <input type="text"  pattern="[A-Za-z\s]" title="Only Letter allowed" id="name" name="name" required placeholder="Enter Name">
+    <h2 style = "text-align: center;" >Student Registration Form</h2>
+    <hr
+   <form>
+    <label for="name">FULL NAME:</label>
+        <input type="text"   title="Only Letter allowed" id="name" name="name" required placeholder="Enter Name">
         <br><br>
         <label for="email">EMAIL:</label>
         <input type="email" id="email" name="email" required placeholder="Enter Email" ><br><br>
-        <label for="number">Phone Number:</label>
-        <input type="tel" id="number" name="number" required placeholder="Enter Phone Number" ><br><br>
-         <label for="date">Check-in Date:</label>
-        <input type="date"  pattern="[A-Za-z\s]"  id="date" name="date" >
-        <br><br>
-        <label for="date">Check-out Date</label>
-        <input type="date"  pattern="[A-Za-z\s]"  id="date" name="date" ><br><br>
-        <label for="number"> Number of Guests:</label>
-        <input type="number" id="number" name="number" required placeholder="Number of Guests" >
-        <br><br>
-        <label for="request">Special request:</label><br>
-        <textarea id="request" name="request" row="4" coloumns="30" ></textarea><br>
-        <input type="submit" value="Book Now">
-        <input type="reset" value="Reset Form">
-    </form>
+        <label for="Password">Password:</label>
+        <input type="Password" id="Password" name="Password" required placeholder="Enter Password" ><br><br>
+        <label for="Gender">Gender:</label>
+        <input type="radio" id="Alpha Male" name="gender" value="Male">
+         <label for="Male">Male:</label>
+         <input type="radio" id="Female" name="gender" value="Female">
+         <label for="Female">Female:</label>
+         <input type="radio" id="Other" name="gender" value="Other">
+         <label for="Other">Other:</label> <br><br>
+         <label for="Course">Select Course</label>
+         <select id ="Course" name="Course" required>
+    <option value="">--Please choose an option--</option>
+    <option value="bscs">B.Sc Computer Science</option>
+    <option value="bcom">B.Com</option>
+    <option value="bba">BBA</option>
+    <option value="btech">B.Tech</option>
+         </select><br><br>
+<Label for="Address" name="Address">Address:</Label><br>
+<textarea id="Address" name="Address" required placeholder="Enter Your Address"></textarea>
+<br><br>
+<input type= "submit" value="Register">
+<input type="reset" value="Clear">
+   </form>
+<hr>
+<p style="text-align: center;">&copy; 2025 Student Registration Portal</p>
     
 </body>
 </html>
