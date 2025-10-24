@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms1</title>
+<style>
+    body{
+       border:3px solid black;
+        border-top: 7px solid black;
+        width: 70%;
+        padding:30px;
+        color:  solid black;
+        margin: 50px auto;
+        text-align: center;
+         box-shadow: 20px 20px 100px gray;
+        
+    }
+
+</style>
+</head>
+<body >
+    <h1>Hotel Room Booking Form</h1>
+    <form>
+        <label for="name">FULL NAME:</label>
+        <input type="text"  pattern="[A-Za-z\s]" title="Only Letter allowed" id="name" name="name" required placeholder="Enter Name">
+        <br><br>
+        <label for="email">EMAIL:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter Email" ><br><br>
+        <label for="number">Phone Number:</label>
+        <input type="tel" id="number" name="number" required placeholder="Enter Phone Number" ><br><br>
+         <label for="date">Check-in Date:</label>
+        <input type="date"  pattern="[A-Za-z\s]"  id="date" name="date" >
+        <br><br>
+        <label for="date">Check-out Date</label>
+        <input type="date"  pattern="[A-Za-z\s]"  id="date" name="date" ><br><br>
+        <label for="number"> Number of Guests:</label>
+        <input type="number" id="number" name="number" required placeholder="Number of Guests" >
+        <br><br>
+        <label for="request">Special request:</label><br>
+        <textarea id="request" name="request" row="4" coloumns="30" ></textarea><br>
+        <input type="submit" value="Book Now">
+        <input type="reset" value="Reset Form">
+    </form>
+    
+</body>
+</html>
