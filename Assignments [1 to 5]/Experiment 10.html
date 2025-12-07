@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase Navbar</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar-container {
+            border: 3px solid black;
+            width: 95%;
+            margin: 20px auto;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #222;
+            color: white;
+            padding: 14px 20px;
+        }
+
+        /* LOGO */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* MENU LINKS */
+        .menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            font-size: 15px;
+        }
+
+        /* RIGHT SECTION */
+        .nav-right {
+            display: flex;
+            gap: 25px;
+        }
+
+        /* HAMBURGER MENU */
+        #menu-toggle {
+            display: none;
+        }
+
+        .hamburger {
+            font-size: 28px;
+            cursor: pointer;
+            display: none; /* hidden on desktop */
+        }
+
+        /* MOBILE DROPDOWN MENU */
+        .mobile-menu {
+            display: none;
+            background: #333;
+            flex-direction: column;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .mobile-menu a {
+            color: white;
+            padding: 10px 0;
+            display: block;
+            font-size: 16px;
+        }
+
+        #menu-toggle:checked ~ .mobile-menu {
+            display: flex;
+        }
+
+      
+
+        /* TABLET + DESKTOP */
+        @media (max-width: 1024px) {
+            .menu a {
+                font-size: 14px;
+            }
+        }
+
+        /* MOBILE VIEW */
+        @media (max-width: 768px) {
+
+            /* Navbar becomes vertical */
+            .navbar {
+                flex-direction: row;
+            }
+
+            /* Hide top menu */
+            .menu {
+                display: none;
+            }
+
+            /* Show hamburger icon */
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h2 style="margin-left: 20px;">Output</h2>
+
+<div class="navbar-container">
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">ShopEase</div>
+
+        <!-- Hamburger Checkbox -->
+        <input type="checkbox" id="menu-toggle">
+
+        <!-- Hamburger Icon -->
+        <label for="menu-toggle" class="hamburger">☰</label>
+
+        <!-- Desktop Menu -->
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Categories</a>
+            <a href="#">Deals</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <!-- Right side -->
+        <div class="nav-right">
+            <span>Cart 🛒</span>
+            <span>Login</span>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-menu">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Categories</a>
+        <a href="#">Deals</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <div style="padding: 10px;">
+        <h2>Welcome to ShopEase!</h2>
+        <p>Your one-stop destination for all shopping needs.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

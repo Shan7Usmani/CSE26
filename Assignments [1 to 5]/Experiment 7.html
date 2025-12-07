@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu</title>
+    <style>
+        .header{
+           display: block;
+            width: 100%;
+            background: #d9d9d9;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+            border-bottom: 1px solid black;
+              box-sizing: border-box;
+        }
+        .nav-container{
+            border: 2px solid black;
+            width: 95%;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .header span{
+            display: inline;
+        }
+        .menu a{
+            display: inline-block;
+            float: left;
+            padding: 10px 15px;
+            margin:5px;
+            text-decoration: none;
+            background: #7cb0ff;
+            border:1px solid #8faadc;
+            font-size: 14px;
+
+        }
+          .menu2 a {
+            display: inline-block;
+            float: left;
+            padding: 5px 10px;
+            margin: 5px;
+            text-decoration: none;
+            background: #ccffcc;
+            border: 1px solid #82c482;
+            font-size: 14px;
+        }
+
+        /* Clear to stop float overlap */
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h2>Output</h2>
+    <div class="nav-container">
+        <div class="header">
+            <span>My</span>
+            <span style="color:red;">Website</span>
+            <span>Navigation</span>
+        </div>
+
+
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Service</a>
+        <a href="#">Contact</a>
+    </div>
+      <!-- Clear float -->
+    <div class="clear"></div>
+     <div class="menu2">
+        <a href="#">Dashboard</a>
+        <a href="#">Profile</a>
+        <a href="#">Messages</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <!-- Clear float -->
+    <div class="clear"></div>
+    </div>
+</body>
+</html>

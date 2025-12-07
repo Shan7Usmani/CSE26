@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Product Grid</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+
+        .container {
+            width: 95%;
+            margin: 30px auto;
+            border: 3px solid black;
+            padding: 20px;
+            background: #e9e9e9;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Desktop: 4 cards */
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .desc {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* ================ TABLET BREAKPOINT (≤1024px) ================= */
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 cards */
+            }
+        }
+
+        /* ================ MOBILE BREAKPOINT (≤600px) ================= */
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: 1fr; /* 1 card */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Responsive Product Grid</h2>
+
+        <div class="product-grid">
+
+            <div class="card">
+                <img src="https://via.placeholder.com/60" alt="Product 1">
+                <div class="name">Product 1</div>
+                <div class="desc">High-quality item with great features.</div>
+                <div class="price">₹499</div>
+            </div>
+
+            <div class="card">
+                <img src="https://via.placeholder.com/60" alt="Product 2">
+                <div class="name">Product 2</div>
+                <div class="desc">Durable and stylish for daily use.</div>
+                <div class="price">₹799</div>
+            </div>
+
+            <div class="card">
+                <img src="https://via.placeholder.com/60" alt="Product 3">
+                <div class="name">Product 3</div>
+                <div class="desc">Lightweight and comfortable.</div>
+                <div class="price">₹1,299</div>
+            </div>
+
+            <div class="card">
+                <img src="https://via.placeholder.com/60" alt="Product 4">
+                <div class="name">Product 4</div>
+                <div class="desc">Trendy design with premium quality.</div>
+                <div class="price">₹999</div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
