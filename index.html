@@ -1,34 +1,231 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Profile</title>
-</head>
-<body>
-    <h1>Takhiro7</h1>
-    <p>I am learning HTML.</p>
-    <h2>My Hobbies</h2>
-    <ul>
-        <li>Coding</li>
-        <li>Gaming</li>
-        <li>Reading</li>
-    </ul>
-    <p>Check out <a href= "Assignments [1 to 10]/Experiment 1.html">Experiment 1</a></p>
-     <p>Check out <a href="Assignments [1 to 10]/Experiment 2.html">Experiment 2</a></p>
-     <p>Check out <a href="Assignments [1 to 10]/Experiment 3 Timetable.html" >Experiment 3: TimeTable</a></p>
-     <p>Check out <a href="Assignments [1 to 10]/Experiment 4 Form1.html">Experiment 4: Form 1</a></p>
-     <p>Check out <a href="Assignments [1 to 10]/Experiment 5 Form2.html">Experiment 5: Form 2</a></p>
-     <p>Check out <a href="Assignments [1 to 10]/Experiment 6.html">Experiment 6</a></p>
-     <p>Check out <a href="Assignments [1 to 10]/Experiment 7.html">Experiment 7</a></p>
-      <p>Check out <a href="Assignments [1 to 10]/Experiment 8.html">Experiment 8</a></p>
-       <p>Check out <a href="Assignments [1 to 10]/Experiment 9.html">Experiment 9</a></p>
-        <p>Check out <a href="Assignments [1 to 10]/Experiment 10.html">Experiment 10</a></p>
-      <p>Check out <a href="Class Tasks/News_Article.html">News Article</a></p> 
-       <p>Check out <a href="Class Tasks/StudentPortfolio.html">Portfolio</a></p>
-         <p>Check out <a href="Class Tasks/RestaurantMenu.html">Restaurant Menu</a></p>
-            <p>Check out <a href="Assignments [1 to 5]/Form1.html">Form 1</a></p>
-            <p>Check out <a href="boxbiodata.html">BoxBiodata</a></p>
-           
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Takhiro7 | Frontend Portfolio</title>
 
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: #11172a;
+      --accent: #6ae3ff;
+      --accent-2: #9d7cff;
+      --text: #e6e9f0;
+      --muted: #9aa3b2;
+      --radius: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top right, #142046 0%, transparent 40%),
+        radial-gradient(circle at bottom left, #08142c 0%, transparent 45%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 30px 80px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      margin-bottom: 70px;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      margin-top: 16px;
+      max-width: 600px;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    /* ===== TAGS ===== */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .tag {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      font-size: 0.9rem;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      margin-top: 80px;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    /* ===== GRID ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      position: relative;
+      padding: 28px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0)),
+        var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    }
+
+    .card a {
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card p {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      margin-top: 120px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    footer span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .container {
+        padding: 40px 20px 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Takhiro<span>7</span></h1>
+      <p class="subtitle">
+        Frontend developer in the making.  
+        Exploring modern UI, clean layouts, and interactive web experiences.
+      </p>
+
+      <div class="tags">
+        <div class="tag">HTML</div>
+        <div class="tag">CSS</div>
+        <div class="tag">JavaScript</div>
+        <div class="tag">UI Design</div>
+        <div class="tag">Frontend</div>
+      </div>
+    </header>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <a href="Extras/E-Commerce/E-commerece.html">E-Commerce Website</a>
+          <p>My first fully fledged website focusing on layout, structure, and navigation.</p>
+        </div>
+
+        <div class="card">
+          <a href="Extras/Solo Levling/ht.html">Solo Leveling</a>
+          <p>A themed website inspired by Solo Leveling with visual emphasis.</p>
+        </div>
+
+        <div class="card">
+          <a href="boxbiodata.html">Box Biodata</a>
+          <p>A clean boxed layout showcasing structured personal data.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSIGNMENTS -->
+    <section>
+      <h2>Assignments</h2>
+      <div class="grid">
+        <div class="card"><a href="Assignments [1 to 10]/Experiment 1.html">Experiment 1</a></div>
+        <div class="card"><a href="Assignments [1 to 10]/Experiment 2.html">Experiment 2</a></div>
+        <div class="card"><a href="Assignments [1 to 10]/Experiment 3 Timetable.html">Experiment 3 – Timetable</a></div>
+        <div class="card"><a href="Assignments [1 to 10]/Experiment 4 Form1.html">Experiment 4 – Form 1</a></div>
+        <div class="card"><a href="Assignments [1 to 10]/Experiment 5 Form2.html">Experiment 5 – Form 2</a></div>
+        <div class="card"><a href="Assignments [1 to 10]/Experiment 6.html">Experiment 6</a></div>
+        <div class="card"><a href="Assignments [1 to 10]/Experiment 7.html">Experiment 7</a></div>
+        <div class="card"><a href="Assignments [1 to 10]/Experiment 8.html">Experiment 8</a></div>
+        <div class="card"><a href="Assignments [1 to 10]/Experiment 9.html">Experiment 9</a></div>
+        <div class="card"><a href="Assignments [1 to 10]/Experiment 10.html">Experiment 10</a></div>
+      </div>
+    </section>
+
+    <!-- CLASS TASKS -->
+    <section>
+      <h2>Class Tasks</h2>
+      <div class="grid">
+        <div class="card"><a href="Class Tasks/News_Article.html">News Article</a></div>
+        <div class="card"><a href="Class Tasks/StudentPortfolio.html">Student Portfolio</a></div>
+        <div class="card"><a href="Class Tasks/RestaurantMenu.html">Restaurant Menu</a></div>
+        <div class="card"><a href="Assignments [1 to 5]/Form1.html">Form 1</a></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      Built by <span>Takhiro7</span> · Frontend Journey 🚀
+    </footer>
+
+  </div>
 
 </body>
 </html>
