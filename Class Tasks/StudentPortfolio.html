@@ -1,91 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style> 
-    table {
-      border-collapse: collapse;
-                  width: 50%; 
-      table-layout: auto; 
-      margin: 50px auto;
-      text-align : center  
-         
-    } 
-    
-    
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg-main: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
+  --card-bg: rgba(255,255,255,0.08);
+  --profile-bg: linear-gradient(160deg,#ff512f,#005eff);
+  --accent: #00f5ff;
+  --text-main: #ffffff;
+  --text-muted: #c7d2fe;
+}
+
+body.light{
+  --bg-main: linear-gradient(135deg,#fdfbfb,#ebedee);
+  --card-bg: rgba(0,0,0,0.05);
+  --profile-bg: linear-gradient(160deg,#ff512f,#005eff);
+  --accent: #6c63ff;
+  --text-main: #111;
+  --text-muted: #444;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background: var(--bg-main);
+  color: var(--text-main);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+.portfolio{
+  width:100%;
+  max-width:1000px;
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap:30px;
+}
+
+/* TOGGLE */
+.toggle{
+  position:fixed;
+  top:25px;
+  right:25px;
+  width:55px;
+  height:30px;
+  background:#999;
+  border-radius:20px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  padding:4px;
+}
+
+.toggle span{
+  width:22px;
+  height:22px;
+  background:#fff;
+  border-radius:50%;
+  transition:0.4s;
+}
+
+body.light .toggle span{
+  transform:translateX(25px);
+}
+
+/* PROFILE */
+.profile{
+  background: var(--profile-bg);
+  border-radius:22px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 30px 60px rgba(0,0,0,0.35);
+}
+
+.profile img{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid rgba(255,255,255,0.8);
+  margin-bottom:20px;
+}
+
+.profile h1{
+  font-size:1.7rem;
+  font-weight:700;
+}
+
+.profile p{
+  margin-top:6px;
+  font-size:0.9rem;
+}
+
+.tag{
+  display:inline-block;
+  margin-top:15px;
+  padding:7px 18px;
+  border-radius:20px;
+  background: var(--accent);
+  color:#000;
+  font-size:0.75rem;
+  font-weight:600;
+}
+
+/* CONTENT */
+.content{
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.25);
+}
+
+.section{
+  margin-bottom:25px;
+}
+
+.section h2{
+  font-size:1.1rem;
+  letter-spacing:1px;
+  margin-bottom:15px;
+  color: var(--accent);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap:15px;
+}
+
+.box{
+  background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.02));
+  border-radius:16px;
+  padding:16px;
+  transition:0.35s;
+}
+
+.box:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+.label{
+  font-size:0.7rem;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color: var(--text-muted);
+  margin-bottom:6px;
+}
+
+.value{
+  font-size:0.95rem;
+  font-weight:500;
+}
+
+/* FOOTER */
+.footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:20px;
+  padding-top:15px;
+  border-top:1px solid rgba(255,255,255,0.2);
+  font-size:0.8rem;
+  color: var(--text-muted);
+}
+
+@media(max-width:900px){
+  .portfolio{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
-<body bgcolor="White">
-    <table border="10" bgcolor="Lightgrey" style = "text-align :center ">
-         <caption style = "text-align: center;"><B><i><u>Student Portfolio</u></i></B></caption>
-        <tr>
-            <td bgcolor="lightblue"><B>Full Name</B></td>
-            <td bgcolor="Lightyellow">Shan Usmani</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>Admission Number</b></td>
-            <td bgcolor="Lightyellow">2025b01010476</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>Date of Birth</b></td>
-            <td bgcolor="Lightyellow">05/08/2005</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>Gender</b></td>
-            <td bgcolor="Lightyellow">Alpha Male</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>Father Name</b></td>
-            <td bgcolor="Lightyellow">Mr. XYZ</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>Mother Name</b></td>
-            <td bgcolor="Lightyellow">Mrs. XYZ</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>Contact Number</b></td>
-            <td bgcolor="Lightyellow">9192XXXXXX</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>E-Mail</b></td>
-            <td bgcolor="Lightyellow">takhiro79@gmail.com</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>Address</b></td>
-            <td bgcolor="Lightyellow">ABESEC , Ghaziabad</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>Course Name</b></td>
-            <td bgcolor="Lightyellow">Bachelors of Technology</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>Branch </b></td>
-            <td bgcolor="Lightyellow">Computer Science</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>Year of Completion</b></td>
-            <td bgcolor="Lightyellow">2029</td>
-        </tr>
-         <tr>
-            <td bgcolor="lightblue"><b>Hobbies</b></td>
-            <td bgcolor="Lightyellow">Boxing ,Travelling ,Coding</td>
-        </tr>
-        <tr>
-            <td bgcolor="lightblue"><b>Photo</b></td>
-            <td bgcolor="Lightyellow"  style = "text-align :center ">
-               
-                  <img src ="Media/Photo (2) (1).jpg" width ="150" alt = 'Student Photo'>
-              
-                 
-                
-            </td>
-        </tr>
 
+<body>
 
+<div class="toggle" onclick="toggleTheme()">
+  <span></span>
+</div>
 
-    </table>
+<div class="portfolio">
+
+  <div class="profile">
+    <img src="Media/Photo (2) (1).jpg" alt="Student Photo">
+    <h1>Shan Usmani</h1>
+    <p>B.Tech • Computer Science</p>
+    <span class="tag">Student Developer</span>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <h2>Personal Information</h2>
+      <div class="grid">
+        <div class="box"><div class="label">Admission No</div><div class="value">2025B01010476</div></div>
+        <div class="box"><div class="label">Date of Birth</div><div class="value">05 August 2005</div></div>
+        <div class="box"><div class="label">Gender</div><div class="value">Male</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Academic Details</h2>
+      <div class="grid">
+        <div class="box"><div class="label">Course</div><div class="value">Bachelor of Technology</div></div>
+        <div class="box"><div class="label">Branch</div><div class="value">Computer Science</div></div>
+        <div class="box"><div class="label">Completion Year</div><div class="value">2029</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Contact & Lifestyle</h2>
+      <div class="grid">
+        <div class="box"><div class="label">Email</div><div class="value">takhiro79@gmail.com</div></div>
+        <div class="box"><div class="label">Location</div><div class="value">ABESEC, Ghaziabad</div></div>
+        <div class="box"><div class="label">Hobbies</div><div class="value">Boxing • Travelling • Coding</div></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Creative Student Portfolio</span>
+      <span>Light / Dark Mode Enabled</span>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
+</script>
+
 </body>
 </html>
