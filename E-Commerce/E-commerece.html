@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minimal UI</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+
+  <nav class="navbar reveal">
+    <div class="logo">E-Commerce</div>
+     <div class="navbar">
+
+    <ul class="nav-links">
+ <li><a href="#home">Home</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#about">About</a></li>
+      <li><a href="#" class="btn">Contact</a></li>
+    </ul>
+
+    <button id="themeToggle" class="btn">🌙</button>
+  </nav>
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+    <button class="btn" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+  <section class="hero reveal">
+    <h1>Build Clean.<br><span>Think Minimal.</span></h1>
+    <p>A modern UI made with pure HTML & CSS.</p>
+    <button class="cta">Get Started</button>
+  </section>
+
+  <section class="cards">
+    <div class="card reveal" tabindex="0">
+      <h3>Fast</h3>
+      <p>Optimized structure with smooth interactions.</p>
+    </div>
+
+    <div class="card reveal" tabindex="0">
+      <h3>Clean</h3>
+      <p>Minimalist layout with premium aesthetics.</p>
+    </div>
+
+    <div class="card reveal" tabindex="0">
+      <h3>Responsive</h3>
+      <p>Looks perfect on every screen size.</p>
+    </div>
+  </section>
+  <script>
+  let lastScroll = 0;
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScroll && currentScroll > 120) {
+      navbar.classList.add("hide");
+    } else {
+      navbar.classList.remove("hide");
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+
+
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
+
+  <script>
+    document.getElementById("themeToggle").onclick = () => {
+      document.body.classList.toggle("light");
+    };
+  </script>
+  <script>
+  const progress = document.getElementById("scroll-progress");
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    progress.style.width = `${(scrollTop / height) * 100}%`;
+  });
+</script>
+<script>
+  const modal = document.getElementById("modal");
+  const titleEl = document.getElementById("modalTitle");
+  const descEl = document.getElementById("modalDesc");
+
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
+      titleEl.textContent = card.querySelector("h3").textContent;
+      descEl.textContent = card.querySelector("p").textContent;
+      modal.classList.add("show");
+    });
+  });
+
+  function closeModal() {
+    modal.classList.remove("show");
+  }
+</script>
+
+
+</body>
+</html>

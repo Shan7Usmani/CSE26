@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solo Leveling System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">⟡</span>
+      <h1>Awakened System</h1>
+    </div>
+    <div class="profile">
+      <span id="playerName">Player</span>
+      <button id="resetBtn" class="btn danger">Reset</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card grid-2">
+      <div>
+        <h2>Stats</h2>
+        <div class="stat-row">
+          <div class="stat-label">Level</div>
+          <div class="stat-value"><span id="level">1</span></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span>EXP</span><span id="expText">0 / 100</span>
+          </div>
+          <div class="progress">
+            <div id="expBar" class="progress-bar" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="stat-label">HP</div>
+            <div class="stat-value"><span id="hp">100</span> / <span id="maxHp">100</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">MP</div>
+            <div class="stat-value"><span id="mp">50</span> / <span id="maxMp">50</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">STR</div>
+            <div class="stat-value" id="str">10</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">AGI</div>
+            <div class="stat-value" id="agi">8</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">INT</div>
+            <div class="stat-value" id="int">7</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">LUK</div>
+            <div class="stat-value" id="luk">5</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">Stat Points</div>
+          <div class="stat-value"><span id="statPoints">0</span></div>
+        </div>
+        <div class="stat-alloc">
+          <button class="btn" data-alloc="str">+ STR</button>
+          <button class="btn" data-alloc="agi">+ AGI</button>
+          <button class="btn" data-alloc="int">+ INT</button>
+          <button class="btn" data-alloc="luk">+ LUK</button>
+        </div>
+      </div>
+
+      <div>
+        <h2>Skills</h2>
+        <ul id="skillsList" class="list"></ul>
+        <div class="skill-actions">
+          <button class="btn" id="learnSkillBtn">Learn random skill</button>
+          <button class="btn" id="useSkillBtn">Use selected skill</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card grid-2">
+      <div>
+        <h2>Quests</h2>
+        <ul id="questsList" class="list"></ul>
+        <div class="quest-actions">
+          <button class="btn" id="newQuestBtn">Generate quest</button>
+          <button class="btn" id="completeQuestBtn">Complete selected quest</button>
+        </div>
+      </div>
+
+      <div>
+        <h2>Inventory</h2>
+        <ul id="inventoryList" class="list"></ul>
+        <div class="inv-actions">
+          <button class="btn" id="lootBtn">Loot</button>
+          <button class="btn" id="equipBtn">Equip selected</button>
+          <button class="btn" id="sellBtn">Sell selected</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card grid-2">
+      <div>
+        <h2>Combat</h2>
+        <div class="enemy">
+          <div class="enemy-name">Enemy: <span id="enemyName">Slime</span></div>
+          <div class="stat-row">
+            <div class="stat-label">Level</div>
+            <div class="stat-value" id="enemyLevel">1</div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label">
+              <span>Enemy HP</span><span id="enemyHpText">30 / 30</span>
+            </div>
+            <div class="progress">
+              <div id="enemyHpBar" class="progress-bar danger" style="width:100%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="combat-actions">
+          <button class="btn primary" id="attackBtn">Attack</button>
+          <button class="btn" id="healBtn">Heal</button>
+          <button class="btn" id="spawnBtn">Spawn stronger enemy</button>
+        </div>
+      </div>
+
+      <div>
+        <h2>System log</h2>
+        <div id="log" class="log"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© Awakened System</span>
+    <span>Built for Solo Leveling-style progression</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
