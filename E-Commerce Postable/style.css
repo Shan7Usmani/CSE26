@@ -31,18 +31,21 @@ nav a {
   display: inline-block;
 }
 .btn-outline {
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.btn-solid {
   background: #fff;
+  border: 1px solid #fff;
   color: #ff6a00;
   padding: 8px 14px;
   border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-solid {
+  background: #fff;
+  border: 1px solid #fff;
+  color: #ff6a00;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
   font-weight: bold;
 }
 .hero {
@@ -179,4 +182,68 @@ footer {
 }
 .Footer2 h4 a:hover {
   color: #ff6a00;        
+}
+/* OVERLAY */
+.join-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+/* MODAL */
+.join-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 360px;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.35s ease;
+  z-index: 1000;
+}
+
+.join-overlay.active,
+.join-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.join-modal.active {
+  transform: translate(-50%, -50%);
+}
+
+.join-modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+}
+
+.join-modal button {
+  width: 100%;
+  padding: 12px;
+  background: #ff6a00;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  cursor: pointer;
 }

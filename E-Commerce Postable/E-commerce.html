@@ -18,8 +18,26 @@
     </nav>
 <div class="auth">
 <a href="https://shan7usmani.github.io/CSE26/Extras/alibabaform.html" class="btn-outline"  target="_blank"> Sign In</a>
-  <a href="https://shan7usmani.github.io/CSE26/Extras/Alibaba%20Extras/joinfree.html" class="btn-solid" target="_blank">Join Free</a>
+ <button class="btn-solid" id="openJoin">Join Free</button>
 </div>
+<!-- JOIN FREE OVERLAY -->
+<div class="join-overlay" id="joinOverlay"></div>
+
+<!-- JOIN FREE MODAL -->
+<div class="join-modal" id="joinModal">
+  <span class="close-btn" id="closeJoin">&times;</span>
+
+  <h2>Join <img src="https://s.alicdn.com/@img/imgextra/i1/O1CN01e5zQ2S1cAWz26ivMo_!!6000000003560-2-tps-920-110.png" width =50%></h2>
+  <p>Create your free account</p>
+
+  <form>
+    <input type="text" placeholder="Full Name">
+    <input type="email" placeholder="Email Address">
+    <input type="password" placeholder="Password">
+    <button type="submit">Create Account</button>
+  </form>
+</div>
+
   </header>
   <section class="hero">
     <h1>Global trade starts here</h1>
@@ -88,5 +106,25 @@
       <br>
          <p>&copy; 2025 Alibaba Clone Minimalist Design</p>
   </footer>
+  <script>
+  const openBtn = document.getElementById("openJoin");
+  const closeBtn = document.getElementById("closeJoin");
+  const overlay = document.getElementById("joinOverlay");
+  const modal = document.getElementById("joinModal");
+
+  openBtn.addEventListener("click", () => {
+    overlay.classList.add("active");
+    modal.classList.add("active");
+  });
+
+  function closeModal() {
+    overlay.classList.remove("active");
+    modal.classList.remove("active");
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+  overlay.addEventListener("click", closeModal);
+</script>
+
 </body>
 </html>
