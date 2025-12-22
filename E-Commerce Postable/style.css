@@ -247,3 +247,100 @@ footer {
   font-size: 22px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .top-bar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .auth {
+    display: flex;
+    gap: 10px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 40px 16px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .search-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  /* CATEGORIES */
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  /* PRODUCTS */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 0 12px;
+  }
+
+  .product img {
+    height: 140px;
+    object-fit: cover;
+  }
+
+  /* JOIN FREE MODAL */
+  .join-modal {
+    width: 90%;
+    padding: 22px;
+  }
+
+  .join-modal h2 img {
+    width: 60%;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 20px 12px;
+    text-align: center;
+  }
+
+  .Footer2 h4 {
+    font-size: 14px;
+  }
+}
+
