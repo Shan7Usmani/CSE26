@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Launch Flow — Futuristic Deep Blue Landing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<script src="script.js"></script>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo"></div>
+        <span>Launch Flow</span>
+      </div>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+      </ul>
+      <button class="cta" onclick="scrollToId('pricing')">Get Started</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Launch your product to new heights</h1>
+        <p>Deep‑blue, futuristic SaaS platform to plan, automate and scale your next product launch.</p>
+        <div class="hero-actions">
+          <button class="btn primary" onclick="scrollToId('services')">Explore Services</button>
+          <button class="btn" onclick="scrollToId('pricing')">View Pricing</button>
+        </div>
+      </div>
+      <div class="orb"></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Services that accelerate launches</h2>
+        <p>From planning to automation and analytics, each service is designed to remove friction.</p>
+      </div>
+      <div class="cards reveal">
+        <article class="card"><h3>Planning</h3><p>Organize milestones and workflows with clarity.</p></article>
+        <article class="card"><h3>Automation</h3><p>Automate tasks and scale faster.</p></article>
+        <article class="card"><h3>Analytics</h3><p>Track and optimize performance in real time.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <h2>What our clients say</h2>
+      </div>
+      <div class="testimonials reveal">
+        <article class="quote"><p>Launch Flow made our release week calm and predictable.</p><div class="meta">Sarah Williams — Product Lead</div></article>
+        <article class="quote"><p>We finally have a single source of truth for our launch plan.</p><div class="meta">Daniel Cho — Growth Manager</div></article>
+        <article class="quote"><p>Clean UI, fast performance, and the right features.</p><div class="meta">Priya Nair — Engineering Manager</div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <h2>Flexible pricing</h2>
+      </div>
+      <div class="pricing reveal">
+        <article class="plan"><h3>Basic</h3><div class="price">$19/month</div><button class="buy">Get Started</button></article>
+        <article class="plan popular"><h3>Standard</h3><div class="price">$49/month</div><button class="buy">Start Standard</button></article>
+        <article class="plan"><h3>Premium</h3><div class="price">$99/month</div><button class="buy">Go Premium</button></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter">
+    <div class="container">
+      <div class="newsletter reveal">
+        <div>
+          <h2>Stay in the launch loop</h2>
+          <p>Get product tips and case studies—no spam, just signal.</p>
+        </div>
+        <form onsubmit="subscribe(event)">
+          <input type="email" id="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <div class="brand"><div class="logo"></div><span>Launch Flow</span></div>
+      <p>Deep blue, future‑forward tools for confident product launches.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -30,10 +30,11 @@
         radial-gradient(circle at bottom left, #08142c 0%, transparent 45%),
         var(--bg);
       color: var(--text);
+      line-height: 1.5;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
       padding: 60px 30px 80px;
     }
@@ -41,10 +42,11 @@
     /* ===== HEADER ===== */
     header {
       margin-bottom: 70px;
+      text-align: center;
     }
 
     h1 {
-      font-size: clamp(2.8rem, 6vw, 4rem);
+      font-size: clamp(2.4rem, 6vw, 4rem);
       font-weight: 900;
       line-height: 1.1;
     }
@@ -57,7 +59,8 @@
 
     .subtitle {
       margin-top: 16px;
-      max-width: 600px;
+      max-width: 700px;
+      margin-inline: auto;
       font-size: 1.05rem;
       color: var(--muted);
     }
@@ -66,6 +69,7 @@
     .tags {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 14px;
       margin-top: 30px;
     }
@@ -87,6 +91,7 @@
     section h2 {
       font-size: 1.8rem;
       margin-bottom: 30px;
+      text-align: center;
     }
 
     /* ===== GRID ===== */
@@ -109,7 +114,7 @@
 
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
 
     .card a {
@@ -119,6 +124,7 @@
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      display: inline-block;
     }
 
     .card p {
@@ -140,22 +146,35 @@
       color: var(--accent);
       font-weight: 600;
     }
-   footer .Extra a:hover {
-  color: #e65c00;
-  text-decoration: underline;
-}
 
     /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      h1 {
+        font-size: clamp(2rem, 7vw, 3rem);
+      }
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+
     @media (max-width: 600px) {
       .container {
         padding: 40px 20px 60px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      section h2 {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 20px;
       }
     }
   </style>
 </head>
 
 <body>
-
   <div class="container">
 
     <!-- HEADER -->
@@ -191,12 +210,10 @@
           <a href="Extras/E-Commerce/E-commerece.html">E-Commerce Website</a>
           <p>My first fully fledged website focusing on layout, structure, and navigation.</p>
         </div>
-
         <div class="card">
           <a href="Extras/Solo Levling/ht.html">Solo Leveling</a>
           <p>A themed website inspired by Solo Leveling with visual emphasis.</p>
         </div>
-
         <div class="card">
           <a href="Class Tasks/StudentPortfolio.html">Box Biodata</a>
           <p>A clean boxed layout showcasing structured personal data.</p>
@@ -221,7 +238,7 @@
       </div>
     </section>
 
-    <!-- CLASS TASKS -->
+       <!-- CLASS TASKS -->
     <section>
       <h2>Class Tasks</h2>
       <div class="grid">
@@ -232,11 +249,12 @@
       </div>
     </section>
 
-     <section>
+    <!-- EXTRAS -->
+    <section>
       <h2>Extras</h2>
       <div class="grid">
-         <div class="card"><a href="E-Commerce Postable/E-commerce.html">Alibaba Clone</a></div>
-          <div class="card"><a href="Launchflow/Launch.html">SaaS landing pages</a></div>
+        <div class="card"><a href="E-Commerce Postable/E-commerce.html">Alibaba Clone</a></div>
+        <div class="card"><a href="Launchflow/Launch.html">SaaS landing pages</a></div>
         <div class="card"><a href="Extras/Alibaba Extras/alibabaform.html">Alibaba Signup Form</a></div>
         <div class="card"><a href="Extras/Alibaba Extras/joinfree.html">Alibaba Join Free Form</a></div>
       </div>
@@ -248,6 +266,5 @@
     </footer>
 
   </div>
-
 </body>
 </html>
