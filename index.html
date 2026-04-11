@@ -149,6 +149,8 @@
       border: 1px solid rgba(255,255,255,0.1);
       backdrop-filter: blur(12px);
       transition: 0.3s;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+
     }
 
     .card:hover {
@@ -197,6 +199,94 @@
     footer span {
       color: var(--neon1);
     }
+    /* ================= MOBILE OPTIMIZATION ================= */
+@media (max-width: 768px) {
+
+  /* 🔥 Better background positioning */
+  body::before {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -100px;
+    filter: blur(100px);
+    opacity: 0.7;
+  }
+
+  body::after {
+    width: 400px;
+    height: 400px;
+    bottom: -100px;
+    right: -100px;
+    filter: blur(100px);
+    opacity: 0.7;
+  }
+
+  /* 🔥 Container spacing */
+  .container {
+    padding: 50px 20px;
+  }
+
+  /* 🔥 Heading scale */
+  h1 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* 🔥 Tags centered and tighter */
+  .tags {
+    gap: 10px;
+  }
+
+  .tag {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+
+  /* 🔥 Section spacing */
+  section {
+    margin-top: 70px;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  /* 🔥 Cards become full width */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  /* 🔥 Button full-width (feels modern mobile) */
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+
+  /* 🔥 LinkedIn spacing */
+  .social {
+    margin-top: 20px;
+  }
+
+}
   </style>
 </head>
 
