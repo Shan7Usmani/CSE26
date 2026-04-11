@@ -2,269 +2,263 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Takhiro7 | Frontend Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Takhiro7 | Portfolio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0b0f1a;
-      --card: #11172a;
-      --accent: #6ae3ff;
-      --accent-2: #9d7cff;
-      --text: #e6e9f0;
-      --muted: #9aa3b2;
-      --radius: 20px;
+      --bg: #05070f;
+      --card: #0d1020;
+      --neon1: #00f7ff;
+      --neon2: #ff00ff;
+      --neon3: #7c3cff;
+      --text: #e6f1ff;
+      --muted: #8892b0;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: system-ui;
     }
 
     body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top right, #142046 0%, transparent 40%),
-        radial-gradient(circle at bottom left, #08142c 0%, transparent 45%),
-        var(--bg);
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
+      overflow-x: hidden;
+      font-size: 18px; /* 🔥 increased base size */
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 700px;
+      height: 700px;
+      filter: blur(140px);
+      z-index: -1;
+    }
+
+    body::before {
+      top: -150px;
+      left: -150px;
+      background: radial-gradient(circle, var(--neon2), transparent);
+      animation: float1 10s infinite alternate;
+    }
+
+    body::after {
+      bottom: -150px;
+      right: -150px;
+      background: radial-gradient(circle, var(--neon1), transparent);
+      animation: float2 12s infinite alternate;
+    }
+
+    @keyframes float1 {
+      to { transform: translate(120px, 100px); }
+    }
+
+    @keyframes float2 {
+      to { transform: translate(-120px, -100px); }
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1300px;
       margin: auto;
-      padding: 60px 30px 80px;
+      padding: 80px 40px;
     }
 
-    /* ===== HEADER ===== */
     header {
-      margin-bottom: 70px;
       text-align: center;
+      margin-bottom: 100px;
     }
 
     h1 {
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 900;
-      line-height: 1.1;
-    }
-
-    h1 span {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      font-size: clamp(4rem, 9vw, 6rem); /* 🔥 bigger */
+      background: linear-gradient(90deg, var(--neon1), var(--neon2), var(--neon3));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
-      margin-top: 16px;
-      max-width: 700px;
-      margin-inline: auto;
-      font-size: 1.05rem;
+      margin-top: 20px;
+      font-size: 1.2rem;
       color: var(--muted);
     }
 
-    /* ===== TAGS ===== */
     .tags {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 14px;
       margin-top: 30px;
     }
 
     .tag {
-      padding: 8px 16px;
+      padding: 10px 22px;
+      font-size: 0.95rem;
       border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      font-size: 0.9rem;
-      color: var(--muted);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,255,255,0.08);
+      border: 1px solid rgba(0,255,255,0.2);
+      color: var(--neon1);
+      font-weight: 600;
     }
 
-    /* ===== SECTIONS ===== */
+    /* 🔥 LINKEDIN */
+    .social {
+      margin-top: 25px;
+    }
+
+    .linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--neon1);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .linkedin:hover {
+      text-shadow: 0 0 10px var(--neon1);
+      transform: scale(1.05);
+    }
+
     section {
-      margin-top: 80px;
+      margin-top: 100px;
     }
 
     section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 30px;
+      font-size: 2rem;
       text-align: center;
+      margin-bottom: 40px;
     }
 
-    /* ===== GRID ===== */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); /* 🔥 bigger cards */
+      gap: 30px;
     }
 
     .card {
-      position: relative;
-      padding: 28px;
-      border-radius: var(--radius);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0)),
-        var(--card);
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 0 30px var(--neon1), 0 0 70px rgba(255,0,255,0.3);
     }
 
-    .card a {
-      text-decoration: none;
-      font-size: 1.05rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--neon1);
     }
 
     .card p {
-      margin-top: 12px;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      margin-bottom: 20px;
       color: var(--muted);
-      line-height: 1.6;
     }
 
-    /* ===== FOOTER ===== */
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--neon1), var(--neon2));
+      color: #000;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 20px var(--neon1), 0 0 40px var(--neon2);
+      transform: scale(1.08);
+    }
+
     footer {
       margin-top: 120px;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: var(--muted);
     }
 
     footer span {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      h1 {
-        font-size: clamp(2rem, 7vw, 3rem);
-      }
-      .subtitle {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 40px 20px 60px;
-      }
-      h1 {
-        font-size: 2.2rem;
-      }
-      section h2 {
-        font-size: 1.5rem;
-      }
-      .card {
-        padding: 20px;
-      }
+      color: var(--neon1);
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <!-- HEADER -->
-    <header>
-      <h1>Takhiro<span>7</span></h1>
-      <p class="subtitle">
-        Frontend developer in the making.  
-        Exploring modern UI, clean layouts, and interactive web experiences.
-      </p>
+<header>
+  <h1>Takhiro7</h1>
+  <p class="subtitle">Frontend Developer • Building clean & modern UI</p>
 
-      <div class="tags">
-        <div class="tag">HTML</div>
-        <div class="tag">CSS</div>
-        <div class="tag">JavaScript</div>
-        <div class="tag">UI Design</div>
-        <div class="tag">Frontend</div>
-      </div>
-    </header>
+  <!-- 🔥 LINKEDIN -->
+  <div class="social">
+    <a class="linkedin" href="https://www.linkedin.com/in/shan-u-6b26b7361" target="_blank">
+      <i class="ri-linkedin-box-fill"></i> LinkedIn
+    </a>
+  </div>
 
-    <!-- PROJECTS -->
-    <section>
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <a href="Sem 1 old/E-Commerce Postable/E-commerce.html">Alibaba Clone</a>
-          <p>My first functioning E-Commerce Clone : Alibaba</p>
-        </div>
-        <div class="card">
-          <a href="Sem 1 old/Launchflow/Launch.html">SaaS landing pages</a>
-          <p>I designed modern SaaS landing pages with real UI sections like analytics dashboards, page builders, and admin panels — not just static designs.</p>
-        </div> 
-        <div class="card">
-          <a href="Sem 1 old/Extras/E-Commerce/E-commerece.html">E-Commerce Website</a>
-          <p>My first fully fledged website focusing on layout, structure, and navigation.</p>
-        </div>
-        <div class="card">
-          <a href="Sem 1 old/Extras/Solo Levling/ht.html">Solo Leveling</a>
-          <p>A themed website inspired by Solo Leveling with visual emphasis.</p>
-        </div>
-        <div class="card">
-          <a href="Sem 1 old/Class Tasks/StudentPortfolio.html">Box Biodata</a>
-          <p>A clean boxed layout showcasing structured personal data.</p>
-        </div>
-      </div>
-    </section>
+  <div class="tags">
+    <div class="tag">React</div>
+    <div class="tag">MongoDB</div>
+    <div class="tag">Java</div>
+    <div class="tag">JavaScript</div>
+    <div class="tag">CSS</div>
+    <div class="tag">HTML</div>
+  </div>
+</header>
 
-    <!-- ASSIGNMENTS -->
-    <section>
-      <h2>Assignments</h2>
-      <div class="grid">
-        <div class="card"><a href="Sem 1 old/Assignments [1 to 10]/Experiment 1.html">Experiment 1</a></div>
-        <div class="card"><a href="Sem 1 old/Assignments [1 to 10]/Experiment 2.html">Experiment 2</a></div>
-        <div class="card"><a href="Sem 1 old/Assignments [1 to 10]/Experiment 3 Timetable.html">Experiment 3 – Timetable</a></div>
-        <div class="card"><a href="Sem 1 old/Assignments [1 to 10]/Experiment 4 Form1.html">Experiment 4 – Form 1</a></div>
-        <div class="card"><a href="Sem 1 old/Assignments [1 to 10]/Experiment 5 Form2.html">Experiment 5 – Form 2</a></div>
-        <div class="card"><a href="Sem 1 old/Assignments [1 to 10]/Experiment 6.html">Experiment 6</a></div>
-        <div class="card"><a href="Sem 1 old/Assignments [1 to 10]/Experiment 7.html">Experiment 7</a></div>
-        <div class="card"><a href="Sem 1 old/Assignments [1 to 10]/Experiment 8.html">Experiment 8</a></div>
-        <div class="card"><a href="Sem 1 old/Assignments [1 to 10]/Experiment 9.html">Experiment 9</a></div>
-        <div class="card"><a href="Sem 1 old/Assignments [1 to 10]/Experiment 10.html">Experiment 10</a></div>
-      </div>
-    </section>
+<section>
+  <h2>Projects</h2>
+  <div class="grid">
 
-       <!-- CLASS TASKS -->
-    <section>
-      <h2>Class Tasks</h2>
-      <div class="grid">
-        <div class="card"><a href="Sem 1 old/Class Tasks/News_Article.html">News Article</a></div>
-        <div class="card"><a href="Sem 1 old/Class Tasks/StudentPortfolio.html">Student Portfolio</a></div>
-        <div class="card"><a href="Sem 1 old/Class Tasks/RestaurantMenu.html">Restaurant Menu</a></div>
-        <div class="card"><a href="Sem 1 old/Assignments [1 to 5]/Form1.html">Form 1</a></div>
-      </div>
-    </section>
+    <div class="card">
+      <h3><i class="ri-shopping-cart-line"></i> Alibaba Clone</h3>
+      <p>E-commerce clone project</p>
+      <a class="btn" href="Sem 1 old/E-Commerce Postable/E-commerce.html">View</a>
+    </div>
 
-    <!-- EXTRAS -->
-    <section>
-      <h2>Extras</h2>
-      <div class="grid">
-        <div class="card"><a href="Sem 1 old/E-Commerce Postable/E-commerce.html">Alibaba Clone</a></div>
-        <div class="card"><a href="Sem 1 old/Launchflow/Launch.html">SaaS landing pages</a></div>
-        <div class="card"><a href="Sem 1 old/Extras/Alibaba Extras/alibabaform.html">Alibaba Signup Form</a></div>
-        <div class="card"><a href="Sem 1 old/Extras/Alibaba Extras/joinfree.html">Alibaba Join Free Form</a></div>
-      </div>
-    </section>
+    <div class="card">
+      <h3><i class="ri-layout-4-line"></i> SaaS Landing</h3>
+      <p>Modern SaaS UI pages</p>
+      <a class="btn" href="Sem 1 old/Extras/LaunchFlowDeep/index.html">View</a>
+    </div>
 
-    <!-- FOOTER -->
-    <footer>
-      Built by <span>Takhiro7</span> · Frontend Journey 🚀
-    </footer>
+    <div class="card">
+      <h3><i class="ri-store-line"></i> E-Commerce</h3>
+      <p>Full layout website</p>
+      <a class="btn" href="Sem 1 old/Extras/E-Commerce/E-commerece.html">View</a>
+    </div>
+
+    <div class="card">
+      <h3><i class="ri-fire-line"></i> Solo Leveling</h3>
+      <p>Themed UI project</p>
+      <a class="btn" href="Sem 1 old/Extras/Solo Levling/ht.html">View</a>
+    </div>
 
   </div>
+</section>
+
+<footer>
+  Built by <span>Takhiro7</span> 🚀
+</footer>
+
+</div>
 </body>
 </html>
