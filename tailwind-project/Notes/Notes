@@ -1,0 +1,14 @@
+npm init -y = creates package.json
+npm install -D tailwindcss postcss autoprefixer = installs tailwindcss, postcss and autoprefixer and make node modules and add them to dev dependencies in package.json
+npx tailwindcss-cli@latest init -p = creates tailwind.config.js and postcss.config.js
+npx tailwindcss-cli@latest -i ./src/style.css -o ./output.css --watch
+50 to 900 is the colours shade ,,, from light to dark
+block element takes the full width of the parent container
+inline element takes only the width of the content inside it
+inline-block element takes the width of the content inside it but also allows to set width and height
+block elements start on a new line and take up the full width available, while inline elements do not start on a new line and only take up as much width as necessary. Inline-block elements are similar to inline elements but allow you to set width and height, and they do not start on a new line.
+breakpoints are used to create responsive designs by applying different styles at different screen sizes. Tailwind CSS provides several default breakpoints (sm, md, lg, xl, 2xl) that you can use to apply styles based on the screen width. For example, you can use "md:bg-red-500" to apply a red background color only on medium screens and larger.
+sm:grid-cols-2 means that on small screens and above, the grid will have 2 columns. This is a responsive utility class in Tailwind CSS that allows you to define the number of columns in a grid layout based on the screen size. In this case, when the screen width is at least the "sm" breakpoint (640px by default), the grid will display 2 columns.
+md:grid-cols-3 means that on medium screens and above, the grid will have 3 columns. This is a responsive utility class in Tailwind CSS that allows you to define the number of columns in a grid layout based on the screen size. In this case, when the screen width is at least the "md" breakpoint (768px by default), the grid will display 3 columns.
+lg:grid-cols-4 means that on large screens and above, the grid will have 4 columns. This is a responsive utility class in Tailwind CSS that allows you to define the number of columns in a grid layout based on the screen size. In this case, when the screen width is at least the "lg" breakpoint (1024px by default), the grid will display 4 columns.
+less than 640px is default for mobile devices, 640px and above is considered small screens (sm), 768px and above is considered medium screens (md), 1024px and above is considered large screens (lg), 1280px and above is considered extra-large screens (xl), and 1536px and above is considered 2x extra-large screens (2xl). These breakpoints are used to apply different styles based on the screen size, allowing for responsive design.
