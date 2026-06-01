@@ -533,7 +533,7 @@ function Footer() {
                 )
             )
         ),
-        React.createElement("div", { className: "copyright" }, "(c) 2026 Amazon Clone. Built with HTML, CSS, and React.")
+        React.createElement("div", { className: "copyright" }, "(c) 2026 Amazon Clone. Developed By : SHAN USMANI . Class - CSE24.")
     );
 }
 
