@@ -324,13 +324,28 @@ function Header({ query, setQuery, category, setCategory, itemCount, openCart })
                     React.createElement("span", null, "Returns"),
                     React.createElement("strong", null, "& Orders")
                 ),
+                
                 React.createElement(
-                    "button",
-                    { className: "cart-button", type: "button", onClick: openCart },
-                    React.createElement("span", { className: "cart-count" }, itemCount),
-                    React.createElement("span", { className: "cart-icon", "aria-hidden": "true" }),
-                    React.createElement("span", { className: "cart-label" }, "Cart")
-                )
+    "button",
+    { className: "cart-button", type: "button", onClick: openCart },
+
+    React.createElement(
+        "span",
+        { className: "cart-icon", "aria-hidden": "true" },
+
+        React.createElement(
+            "span",
+            { className: "cart-count" },
+            itemCount
+        )
+    ),
+
+    React.createElement(
+        "span",
+        { className: "cart-label" },
+        "Cart"
+    )
+)
             )
         ),
         React.createElement(
